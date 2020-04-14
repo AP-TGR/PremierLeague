@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ApiResource()
@@ -25,11 +26,13 @@ class Team
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Notblank
      */
     private $name;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Notblank
      */
     private $strip;
 
@@ -40,6 +43,7 @@ class Team
 
     /**
      * @ORM\Column(type="datetime")
+     * @Assert\Notblank
      */
     private $created_date;
 
